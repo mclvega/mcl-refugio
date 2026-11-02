@@ -388,7 +388,7 @@ export class Partida {
     if (this.esNoche && this.pendientes.length) {
       this.relojOleada -= dt;
       if (this.relojOleada <= 0) {
-        this.relojOleada = Math.max(0.7, 3.2 - this.dia * 0.12);
+        this.relojOleada = Math.max(0.6, 2.6 - this.dia * 0.12);
         this.aparecerEnemigo(this.pendientes.shift()!);
       }
     }
@@ -396,8 +396,8 @@ export class Partida {
     if (!this.esNoche && this.dia >= 2) {
       this.relojExplorador -= dt;
       const vivos = this.enemigos.filter((e) => e.muerte < 0 && !e.huye).length;
-      if (this.relojExplorador <= 0 && vivos < Math.min(3, 1 + Math.floor(this.dia / 4))) {
-        this.relojExplorador = 45;
+      if (this.relojExplorador <= 0 && vivos < Math.min(4, 1 + Math.floor(this.dia / 3))) {
+        this.relojExplorador = 35;
         this.aparecerEnemigo('salvaje');
       }
     }
@@ -452,8 +452,8 @@ export class Partida {
     const j = this.jugador;
     if (this.hambreSed) {
       const k = this.modo.hambre * (1 - this.recuerdos.estomago * 0.12);
-      j.hambre = Math.max(0, j.hambre - dt * (100 / 400) * k);
-      j.sed = Math.max(0, j.sed - dt * (100 / 300) * k);
+      j.hambre = Math.max(0, j.hambre - dt * (100 / 330) * k);
+      j.sed = Math.max(0, j.sed - dt * (100 / 250) * k);
     }
     if (j.hambre <= 0) j.vida -= dt * 1.5;
     if (j.sed <= 0) j.vida -= dt * 1.5;

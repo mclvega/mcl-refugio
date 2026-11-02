@@ -34,9 +34,9 @@ export function escalaDia(dia: number) {
   const n = Math.max(0, dia - 1);
   return {
     /** Enemigos de la oleada de la noche. */
-    oleada: Math.min(40, 3 + Math.floor(n * 1.6)),
-    vida: 1 + n * 0.14,
-    dano: 1 + n * 0.08,
+    oleada: Math.min(48, 4 + Math.floor(n * 2)),
+    vida: 1 + n * 0.18,
+    dano: 1 + n * 0.1,
     /** Cada 5 noches llega el Gigante. */
     jefe: dia % 5 === 0,
   };
