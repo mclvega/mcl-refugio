@@ -1,0 +1,22 @@
+{
+  "name": "mcl-refugio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Supervivencia en el bosque: recolecta, fabrica, construye tu base y aguanta oleadas cada noche, día tras día sin fin.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@types/three": "^0.186.0",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.4",
+    "vitest": "^5.0.4"
+  },
+  "dependencies": {
+    "three": "^0.186.1"
+  }
+}
